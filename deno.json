@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "lib": ["deno.window", "dom"]
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["explicit-function-return-type"]
+    }
+  },
+  "imports": {
+    "@assets": "./src/assets/mod.ts",
+    "@framework": "./src/framework/mod.ts"
+  },
+  "tasks": {
+    "esbuild": "deno run -ER --allow-run npm:esbuild@0.24.0",
+    "build": "deno run -RWEN --allow-run build.ts",
+    "serve": "deno run -R=./bin -N serve.ts"
+  }
+}
