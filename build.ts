@@ -1,4 +1,4 @@
-import { encodeBase64 } from "jsr:@std/encoding/base64";
+import { encode } from "./src/framework/base64-arraybuffer.ts";
 
 const ESBUILD_COMMAND = "deno";
 const ESBUILD_ARGS = [
@@ -60,9 +60,7 @@ async function bundleAssets(): Promise<void> {
     }
 
     const asset = await Deno.readFile("./assets/" + entry.name);
-    writer.write(
-      encoder.encode(`\t"${entry.name}": "${encodeBase64(asset)}",\n`)
-    );
+    writer.write(encoder.encode(`\t"${entry.name}": "${encode(asset)}",\n`));
   }
 
   writer.write(encoder.encode("}\n"));

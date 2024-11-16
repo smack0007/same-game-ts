@@ -2,6 +2,9 @@
   "compilerOptions": {
     "lib": ["deno.window", "dom"]
   },
+  "fmt": {
+    "lineWidth": 120
+  },
   "lint": {
     "rules": {
       "tags": ["recommended"],
