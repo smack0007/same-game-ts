@@ -1,4 +1,4 @@
-import { encode } from "./src/framework/base64-arraybuffer.ts";
+import { encode } from "./ext/base64-arraybuffer.ts";
 
 const ESBUILD_COMMAND = "deno";
 const ESBUILD_ARGS = [
